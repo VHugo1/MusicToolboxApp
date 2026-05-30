@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#40000000" />
+            <size android:width="52dp" android:height="52dp" />
+        </shape>
+    </item>
+    <!-- Círculo dorado -->
+    <item android:bottom="4dp" android:right="4dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFD700" />
+            <stroke android:width="2dp" android:color="#000000" />
+            <size android:width="48dp" android:height="48dp" />
+        </shape>
+    </item>
+</layer-list>

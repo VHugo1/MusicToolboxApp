@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/arrow_regresar"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_acordes_header"
+                android:layout_width="206dp"
+                android:layout_height="48dp"
+                android:background="@drawable/gradiente_acordes"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Acordes de Guitarra"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+
+        </LinearLayout>
+
+        <!-- Selector de nota - FILA 1 (C, D, E, F) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_c"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_d"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="D"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_e"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="E"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_f"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="F"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+
+        </LinearLayout>
+
+        <!-- Selector de nota - FILA 2 (G, A, B) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_g"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="G"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_a"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="A"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nota_b"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="B"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <!-- Selector de tipo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tipo_mayor"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
+                android:text="Mayor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tipo_menor"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
+                android:text="menor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tipo_septima"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
+                android:text="7ª"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#FFDAB9"
+                android:layout_margin="4dp" />
+
+        </LinearLayout>
+
+        <!-- Diagrama del acorde -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/fondo_blanco"
+            android:layout_marginBottom="24dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/diagrama_acorde"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/diagrama_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Diagrama no disponible"
+                android:textColor="#666666"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Nombre del acorde -->
+        <TextView
+            android:id="@+id/txt_nombre_acorde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="C Mayor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón 5tas al final -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/btn_circulo_quintas"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="5tas"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/cropped_image"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imgPromocional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/vhuguito_promo"
+            android:visibility="gone"
+            android:contentDescription="Imagen promocional VHuguito" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_tuner"
+        android:title="Afinador"
+        android:icon="@drawable/placeholder_logo" />
+    <item
+        android:id="@+id/action_metronome"
+        android:title="Metrónomo"
+        android:icon="@drawable/placeholder_logo" />
+</menu>

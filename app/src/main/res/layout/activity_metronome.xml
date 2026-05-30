@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/arrow_regresar"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_metronomo_header"
+                android:layout_width="168dp"
+                android:layout_height="48dp"
+                android:background="@drawable/gradiente_metronomo"
+                android:gravity="center"
+                android:text="Metrónomo"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_play_pause"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/play_pause"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
+
+        <!-- BPM Display -->
+        <TextView
+            android:id="@+id/tv_bpm_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="120"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_bpm_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BPM"
+            android:textSize="16sp"
+            android:textColor="#AAAAAA"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Slider BPM -->
+        <SeekBar
+            android:id="@+id/seekbar_bpm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="280"
+            android:progress="100"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="16dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="20" android:textColor="#AAAAAA" android:textSize="12sp" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="120" android:textColor="#AAAAAA" android:textSize="12sp" android:gravity="center" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="300" android:textColor="#AAAAAA" android:textSize="12sp" android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Indicadores de tiempos -->
+        <LinearLayout
+            android:id="@+id/beat_indicators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Selector de compás -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_2_4"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:text="2/4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#17cff5"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_3_4"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:text="3/4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#17cff5"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_4_4"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:text="4/4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#b747f4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_6_8"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:text="6/8"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#b747f4"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Control de volumen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_volume"
+                android:tint="#AAAAAA" />
+
+            <SeekBar
+                android:id="@+id/seekbar_volume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="80"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Botones TAP -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/gradiente_boton_metronomo"
+            android:padding="0dp"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btn_tap_down"
+                android:layout_width="65dp"
+                android:layout_height="62dp"
+                android:text="▼"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@null" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:gravity="center"
+                android:text="TAP"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+
+            <Button
+                android:id="@+id/btn_tap_up"
+                android:layout_width="65dp"
+                android:layout_height="62dp"
+                android:text="▲"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@null" />
+
+        </LinearLayout>
+
+        <!-- Botón Premium -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btn_diamante"
+                    android:layout_width="71dp"
+                    android:layout_height="71dp"
+                    android:src="@drawable/diamante"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/txt_premium"
+                    android:layout_width="77dp"
+                    android:layout_height="wrap_content"
+                    android:text="Premium"
+                    android:textColor="#03fdee"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Botón Círculo de Quintas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/btn_circulo_quintas"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="5tas"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/cropped_image"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+        <!-- BANNER -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-2355410845517735/4839382412" />
+
+        <ImageView
+            android:id="@+id/imgPromocional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/vhuguito_promo"
+            android:visibility="gone"
+            android:contentDescription="Imagen promocional VHuguito" />
+
+    </LinearLayout>
+</ScrollView>

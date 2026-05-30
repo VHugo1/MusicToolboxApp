@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_radial">
+
+    <!-- Título: Music (línea 1) y Toolbox (línea 2) -->
+    <LinearLayout
+        android:id="@+id/titulo_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/txt_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music"
+            android:textColor="#fbf003"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/seymour_one"
+            android:shadowColor="#000000"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowRadius="4" />
+
+        <TextView
+            android:id="@+id/txt_toolbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toolbox"
+            android:textColor="#fbf003"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/seymour_one"
+            android:shadowColor="#000000"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowRadius="4" />
+    </LinearLayout>
+
+    <!-- Logo MTB (50% más grande: 179 x 269) -->
+    <ImageView
+        android:id="@+id/logo_mtb"
+        android:layout_width="179dp"
+        android:layout_height="269dp"
+        android:src="@drawable/logo_mtb2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <!-- Logo VHuguito (W 163, H 162, X 99, Y 433) -->
+    <ImageView
+        android:id="@+id/logo_vhuguito"
+        android:layout_width="163dp"
+        android:layout_height="162dp"
+        android:src="@drawable/logo_vhuguito_oscuro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_mtb"
+        android:layout_marginTop="20dp" />
+
+    <!-- Texto VHuguito Software -->
+    <TextView
+        android:id="@+id/txt_vhuguito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VHuguito Software"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_vhuguito"
+        android:layout_marginTop="16dp" />
+
+    <!-- Texto Tecnología con Identidad -->
+    <TextView
+        android:id="@+id/txt_tecnologia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tecnología con Identidad"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_vhuguito"
+        android:layout_marginTop="4dp" />
+
+    <!-- Barra de progreso -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:indeterminate="true"
+        android:progressTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

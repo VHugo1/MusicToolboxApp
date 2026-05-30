@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra (capa inferior) -->
+    <item>
+        <shape>
+            <solid android:color="#40000000" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- Botón desplazado hacia arriba para crear efecto de sombra -->
+    <item android:bottom="3dp">
+        <shape>
+            <gradient
+                android:type="linear"
+                android:angle="0"
+                android:startColor="#FFED00"
+                android:endColor="#3AF7FB" />
+            <stroke
+                android:width="1dp"
+                android:color="#000000" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/arrow_regresar"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_tablaturas_header"
+                android:layout_width="208dp"
+                android:layout_height="48dp"
+                android:background="@drawable/gradiente_tablaturas"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Tablaturas de Piano"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+
+        </LinearLayout>
+
+        <!-- Selector de tipo de acorde - FILA 1 (M, m, 7M) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mayores"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="M"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_menores"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="m"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_septima_mayor"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="7M"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+        </LinearLayout>
+
+        <!-- Selector de tipo de acorde - FILA 2 (7m, 9M, 9D) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_septima_menor"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="7m"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_novena_mayor"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="9M"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_novena_dominante"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="9D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#7FFFD4"
+                android:layout_margin="4dp" />
+
+        </LinearLayout>
+
+        <!-- Imagen de la tablatura -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/fondo_blanco"
+            android:layout_marginBottom="24dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imagen_tablatura"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tablatura no disponible"
+                android:textColor="#666666"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+
+        <!-- Botón Círculo de Quintas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btn_circulo_quintas"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/cropped_image"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imgPromocional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/vhuguito_promo"
+            android:visibility="gone"
+            android:contentDescription="Imagen promocional VHuguito" />
+    </LinearLayout>
+</ScrollView>
