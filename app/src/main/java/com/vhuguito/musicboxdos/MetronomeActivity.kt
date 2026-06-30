@@ -76,11 +76,13 @@ class MetronomeActivity : AppCompatActivity() {
             btnDiamante.visibility = View.GONE
             txtPremium.visibility = View.GONE
             imgPromocional.visibility = View.VISIBLE   // <--- Mostrar imagen
+            btnCirculoQuintas.visibility = View.VISIBLE   // <--- Mostrar el botón para Premium
         } else {
             adView.visibility = View.VISIBLE
             btnDiamante.visibility = View.VISIBLE
             txtPremium.visibility = View.VISIBLE
             imgPromocional.visibility = View.GONE      // <--- Ocultar imagen
+            btnCirculoQuintas.visibility = View.GONE      // <--- Ocultar el botón para Gratuito
             val adRequest = AdRequest.Builder().build()
             adView.loadAd(adRequest)
 

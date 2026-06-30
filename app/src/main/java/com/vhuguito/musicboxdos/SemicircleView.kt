@@ -90,7 +90,7 @@ class SemicircleView @JvmOverloads constructor(
 
         paint.color = Color.BLACK
         paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 8f
+        paint.strokeWidth = 14f
         canvas.drawLine(cx, cy, xAguja, yAguja, paint)
 
         paint.style = Paint.Style.FILL

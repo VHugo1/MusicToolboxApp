@@ -240,7 +240,7 @@
 
         </LinearLayout>
 
-        <!-- Botón Premium -->
+        <!-- Botón Premium (Diamante) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -271,10 +271,11 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center" />
+
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Botón Círculo de Quintas -->
+        <!-- Botón Círculo de Quintas (independiente) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -312,6 +313,7 @@
             app:adSize="BANNER"
             app:adUnitId="ca-app-pub-2355410845517735/4839382412" />
 
+        <!-- IMAGEN PROMOCIONAL -->
         <ImageView
             android:id="@+id/imgPromocional"
             android:layout_width="match_parent"

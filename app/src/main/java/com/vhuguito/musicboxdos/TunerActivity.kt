@@ -46,6 +46,7 @@ class TunerActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private var updateRunnable: Runnable? = null
 
+    private val historialCents = mutableListOf<Int>()
     private val SAMPLE_RATE = 44100
     private val BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLE_RATE, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT)
     private val THRESHOLD = 0.01
@@ -76,11 +77,13 @@ class TunerActivity : AppCompatActivity() {
             btnDiamante.visibility = View.GONE
             txtPremium.visibility = View.GONE
             imgPromocional.visibility = View.VISIBLE
+            btnCirculoQuintas.visibility = View.VISIBLE   // <--- Mostrar el botón para Premium
         } else {
             adView.visibility = View.VISIBLE
             btnDiamante.visibility = View.VISIBLE
             txtPremium.visibility = View.VISIBLE
             imgPromocional.visibility = View.GONE
+            btnCirculoQuintas.visibility = View.GONE      // <--- Ocultar el botón para Gratuito
             val adRequest = AdRequest.Builder().build()
             adView.loadAd(adRequest)
 
@@ -213,7 +216,13 @@ class TunerActivity : AppCompatActivity() {
                 txtRuido.text = ""
                 val notaInfo = getNoteFromFrequency(frequency)
                 updateNoteDisplay(notaInfo)
-                semicirculoView.updateCents(notaInfo.centOffset)
+                // Suavizar el movimiento con promedio móvil
+                historialCents.add(notaInfo.centOffset)
+                if (historialCents.size > 5) {  // Promediamos los últimos 5 valores
+                    historialCents.removeAt(0)
+                }
+                val promedioCents = historialCents.average().toInt()
+                semicirculoView.updateCents(promedioCents)
             }
         } else {
             runOnUiThread {
